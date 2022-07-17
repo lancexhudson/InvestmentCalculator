@@ -61,10 +61,10 @@ public class SavingsRate {
             BigDecimal annualSavings = new BigDecimal("0.10");
             MathContext m = new MathContext(5);
             BigDecimal OnePercentBSaved = new BigDecimal(".1");
+            BigDecimal weeklyRateAmount = new BigDecimal(decimalFormat.format(percentBeingSaved.multiply(annualSalary.multiply(weeklySavings).multiply(OnePercentBSaved))));
 
             System.out.println("With an income of " + "$" + decimalFormat.format(annualSalary) + " per year, ");
-            System.out.println("Your weekly savings rate of " + percentBeingSaved + "%" + " " + "is equal to " + "$" +
-                    decimalFormat.format(percentBeingSaved.multiply(annualSalary.multiply(weeklySavings).multiply(OnePercentBSaved))));
+            System.out.println("Your weekly savings rate of " + percentBeingSaved + "%" + " " + "is equal to " + "$" + weeklyRateAmount);
 
 
         } else if (paydayContribution == 2) {
@@ -73,9 +73,10 @@ public class SavingsRate {
             BigDecimal annualSavings = new BigDecimal("0.10");
             MathContext m = new MathContext(5);
             BigDecimal OnePercentBSaved = new BigDecimal(".1");
+            BigDecimal biWeeklyRateAmount = new BigDecimal( decimalFormat.format(percentBeingSaved.multiply(annualSalary.multiply(biWeeklySavings).multiply(OnePercentBSaved))));
+
             System.out.println("With an income of " + "$" + decimalFormat.format(annualSalary) + " per year, ");
-            System.out.println("Your bi-weekly savings rate of " + percentBeingSaved + "%" + " " + "is equal to " + "$" +
-                    decimalFormat.format(percentBeingSaved.multiply(annualSalary.multiply(biWeeklySavings).multiply(OnePercentBSaved))));
+            System.out.println("Your bi-weekly savings rate of " + percentBeingSaved + "%" + " " + "is equal to " + "$" + biWeeklyRateAmount);
 
 
         } else if (paydayContribution == 3) {
@@ -85,9 +86,10 @@ public class SavingsRate {
             MathContext m = new MathContext(5);
             BigDecimal OnePercentBSaved = new BigDecimal(".1");
             BigDecimal moSavingsMultiply = new BigDecimal("4");
+            BigDecimal monthlyRateAmount = new BigDecimal(decimalFormat.format(percentBeingSaved.multiply(annualSalary.multiply(weeklySavings).multiply(OnePercentBSaved)).multiply(moSavingsMultiply)));
+
             System.out.println("With an income of " + "$" + decimalFormat.format(annualSalary) + " per year, ");
-            System.out.println("Your monthly savings rate of " + percentBeingSaved + "%" + " " + "is equal to " + "$" +
-                    decimalFormat.format(percentBeingSaved.multiply(annualSalary.multiply(weeklySavings).multiply(OnePercentBSaved)).multiply(moSavingsMultiply)));
+            System.out.println("Your monthly savings rate of " + percentBeingSaved + "%" + " " + "is equal to " + "$" + monthlyRateAmount);
 
         } else if (paydayContribution == 4) {
             BigDecimal weeklySavings = new BigDecimal(".00192307692");
@@ -95,6 +97,8 @@ public class SavingsRate {
             BigDecimal annualSavings = new BigDecimal("0.10");
             MathContext m = new MathContext(5);
             BigDecimal OnePercentBSaved = new BigDecimal(".1");
+            BigDecimal annualRateAmount = new BigDecimal(0);
+
             System.out.println("With an income of " + "$" + decimalFormat.format(annualSalary) + " per year, ");
             System.out.println("Your annual savings rate of " + percentBeingSaved + "%" + " " + "is equal to " + "$" +
                     decimalFormat.format(percentBeingSaved.multiply(annualSalary.multiply(annualSavings).multiply(OnePercentBSaved))));

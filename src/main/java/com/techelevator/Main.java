@@ -8,6 +8,8 @@ import java.util.Scanner;
 
 public class Main {
 
+    Computation computation = new Computation();
+
     public static void main(String[] args) {
 
             //// this line will place the investment selection menu. starts code right here
@@ -32,7 +34,24 @@ public class Main {
             //System.out.println("");
 
         if (input == 1) {
-            SavingsRate.prompt();
+            Computation.computationRates();
+
+            //SavingsRate.prompt();
+
+            /////// THE BELOW BLOCK IS NEW.
+//            System.out.println("See how powerful your savings can be:");
+//            System.out.println("");
+//            System.out.println("(1) for Investing");
+//            System.out.print("(2) for Retirement:");
+//            if (input == 1) {
+//                TopMenu.savingsAndInvestments();
+//            }
+//            if (input == 2) {
+//                TopMenu.retirementTop();
+//            }
+            /////// THE ABOVE BLOCK IS NEW.
+
+
         } if (input == 3) {
                 Retirement.retirementClass();
             }
