@@ -59,16 +59,3 @@ public class SelectionMenu extends Retirement {
 
 
 
-//                    System.out.println("How would you like to proceed?");                                              // this is a test block
-//                            System.out.println("(1) Calculate your financial future based off Income & Savings Rate");
-//                            System.out.println("(2) Proceed by inputting values manually");
-//                            String selection = String.valueOf(Integer.parseInt(keyboardScanner.nextLine()));
-//                            System.out.println("");
-//                            if (selection == "2") {
-//                            SelectionMenu.savingsRateVsIncome();
-//                            }
-//
-//                            System.out.print("What is your annual income? ");
-//                            BigDecimal annualIncome = new BigDecimal(keyboardScanner.nextLine());
-//                            System.out.println("");
-//                            System.out.println("");

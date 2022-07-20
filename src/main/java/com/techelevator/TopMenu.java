@@ -10,7 +10,6 @@ public class TopMenu extends Computation {
     static Scanner keyboardScanner = new Scanner(System.in);
 
 
-
     public static void introduction() {
         System.out.println("--------------------------------------------------");
         System.out.println(" Welcome to The Savings & Investment Calculator ");
