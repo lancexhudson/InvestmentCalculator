@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    Computation computation = new Computation();
+
 
     public static void main(String[] args) {
 
@@ -16,6 +16,8 @@ public class Main {
             DecimalFormat decimalFormat = new DecimalFormat("#.##");
             decimalFormat.setGroupingUsed(true);
             decimalFormat.setGroupingSize(3);
+
+        Computation computation = new Computation();
 
         TopMenu.introduction();
 
@@ -31,43 +33,27 @@ public class Main {
             }
 
             if (input == 2) {
-
                 TopMenu.disclaimer();
+
                int subinput = promptForInt(keyboardScanner, "(1) to Confirm and Continue: ");
                 System.out.println("");
 
-
                 if (subinput == 1) {
-
                    TopMenu.savingsAndInvestments();
 
                     int investChoice = promptForInt(keyboardScanner, "What is your selection? ");
                     System.out.println("");
-
                     int investmentLength = promptForInt(keyboardScanner,"How many years do you plan on investing? " );
                     System.out.println("");
-
                     BigDecimal userContribution = promptForBigDecimal(keyboardScanner,"How much do you plan on investing every year? " );
                     System.out.println("");
 
-                    if (investChoice == 1)
-                    {
+                    if (investChoice == 1) {
 
-                          //  computation.savingsRateMath();
-                        BigDecimal totalUserStash = BigDecimal.ZERO;
-                        BigDecimal totalInterest = BigDecimal.ZERO;
                         BigDecimal interest = new BigDecimal("0.0001");
+                        String result = computation.calculateCompoundGrowth(investmentLength, userContribution, interest);
+                        System.out.print(result);
 
-                        for (int year = 1; year <= investmentLength; year++) {
-
-                            totalUserStash = userContribution.add(totalUserStash);
-                            BigDecimal interestForThisYear = totalInterest.add(totalUserStash).multiply(interest);
-                            totalInterest = interestForThisYear.add(totalInterest);
-                        }
-                        System.out.println("Your total contribution: " + "$" + decimalFormat.format(totalUserStash));
-                        System.out.println("Total interest earned: " + "$" + decimalFormat.format(totalInterest));
-                        System.out.println("Contribution + Interest: " + "$" + decimalFormat.format(totalUserStash.add(totalInterest)));
-                        System.out.println("");
                         int selection = promptForInt(keyboardScanner,"Press (1) to learn more about Savings Accounts:\n" +
                                 "Press (2) to return to the Main Menu: " );
                         System.out.println("");
@@ -81,21 +67,10 @@ public class Main {
 
                     else if (investChoice == 2) {
 
-                       // computation.highYieldSavingsMath();
-                        BigDecimal totalUserStash = BigDecimal.ZERO;
-                        BigDecimal totalInterest = BigDecimal.ZERO;
-                        BigDecimal highYieldInterest = new BigDecimal(".01");
+                        BigDecimal interest = new BigDecimal("0.01");
+                        String result = computation.calculateCompoundGrowth(investmentLength, userContribution, interest);
+                        System.out.print(result);
 
-                        for (int year = 1; year <= investmentLength; year++) {
-
-                            totalUserStash = userContribution.add(totalUserStash);
-                            BigDecimal interestForThisYear = totalInterest.add(totalUserStash).multiply(highYieldInterest);
-                            totalInterest = interestForThisYear.add(totalInterest);
-                        }
-                        System.out.println("Your total contribution: " + "$" + decimalFormat.format(totalUserStash));
-                        System.out.println("Total interest earned: " + "$" + decimalFormat.format(totalInterest));
-                        System.out.println("Contribution + Interest: " + "$" + decimalFormat.format(totalUserStash.add(totalInterest)));
-                        System.out.println("");
                         int selection = promptForInt(keyboardScanner,"Press (1) to learn more about High-Yield Savings Accounts:\n" +
                                 "Press (2) to return to the Main Menu: " );
                         System.out.println("");
@@ -105,27 +80,14 @@ public class Main {
                         } else if (selection == 2) {
                             TopMenu.introduction();
                         }
-
                     }
 
                     if (investChoice == 3) {
 
-                     //   computation.fourZeroOneKMath();
-                        BigDecimal totalUserStash = BigDecimal.ZERO;
-                        BigDecimal totalInterest = BigDecimal.ZERO;
-                        BigDecimal fourZeroOneKWithMatch = new BigDecimal(".11");
+                        BigDecimal interest = new BigDecimal("0.11");
+                        String result = computation.calculateCompoundGrowth(investmentLength, userContribution, interest);
+                        System.out.print(result);
 
-                        for (int year = 1; year <= investmentLength; year++) {
-
-                            totalUserStash = userContribution.add(totalUserStash);
-                            BigDecimal interestForThisYear = totalInterest.add(totalUserStash).multiply(fourZeroOneKWithMatch);
-                            totalInterest = interestForThisYear.add(totalInterest);
-                        }
-
-                        System.out.println("Your Total Contribution: " + "$" + decimalFormat.format(totalUserStash));
-                        System.out.println("Total Compound Growth: " + "$" + decimalFormat.format(totalInterest));
-                        System.out.println("Contribution + Compound Growth: " + "$" + decimalFormat.format(totalUserStash.add(totalInterest)));
-                        System.out.println("");
                         int selection = promptForInt(keyboardScanner,"Press (1) to learn more about 401Ks:\n" +
                                 "Press (2) to return to the Main Menu: " );
                         System.out.println("");
@@ -135,29 +97,19 @@ public class Main {
                         } else if (selection == 2) {
                             TopMenu.introduction();
                         }
-
                     }
+
                     if (investChoice == 4) {
 
-                      //  computation.standardAndPoorsMath();
-                        BigDecimal totalUserStash = BigDecimal.ZERO;
-                        BigDecimal totalInterest = BigDecimal.ZERO;
-                        BigDecimal standardAndPoors500 = new BigDecimal(".105");
-
-                        for (int year = 1; year <= investmentLength; year++) {
-
-                            totalUserStash = userContribution.add(totalUserStash);
-                            BigDecimal interestForThisYear = totalInterest.add(totalUserStash).multiply(standardAndPoors500);
-                            totalInterest = interestForThisYear.add(totalInterest);
-                        }
+                        ///////////////////////////////// AMATORIZATION BLOCK AMATORIZATION ??????????????????????????????????????????
                         //*********** the below code is good for showing year over year growth from investment *******************///////////
                         /////////  System.out.println(totalUserStash + " " + "$" + totalInterest.setScale(2,
                         ///////// // RoundingMode.CEILING) + " " + "$" + totalUserStash.add(totalInterest).setScale(2, RoundingMode.CEILING));
 
-                        System.out.println("Your Total Contribution: " + "$" + decimalFormat.format(totalUserStash));
-                        System.out.println("Total Compound Growth: " + "$" + decimalFormat.format(totalInterest));
-                        System.out.println("Contribution + Compound Growth: " + "$" + decimalFormat.format(totalUserStash.add(totalInterest)));
-                        System.out.println("");
+                        BigDecimal interest = new BigDecimal("0.105");
+                        String result = computation.calculateCompoundGrowth(investmentLength, userContribution, interest);
+                        System.out.print(result);
+
                         int selection = promptForInt(keyboardScanner,"Press (1) to learn more about S&P 500 Index Funds:\n" +
                                 "Press (2) to return to the Main Menu: " );
                         System.out.println("");
@@ -167,29 +119,14 @@ public class Main {
                         } else if (selection == 2) {
                             TopMenu.introduction();
                         }
-//
                    }
 
                     if (investChoice == 5) {
 
-                      //  computation.tenYearTreasuryMath();
-                        BigDecimal totalUserStash = BigDecimal.ZERO;
-                        BigDecimal totalInterest = BigDecimal.ZERO;
-                        BigDecimal tenYearUSTreasury = new BigDecimal(".0313");
+                        BigDecimal interest = new BigDecimal("0.0313");
+                        String result = computation.calculateCompoundGrowth(investmentLength, userContribution, interest);
+                        System.out.print(result);
 
-                        for (int year = 1; year <= investmentLength; year++) {
-
-                            totalUserStash = userContribution.add(totalUserStash);
-                            BigDecimal interestForThisYear = totalInterest.add(totalUserStash).multiply(tenYearUSTreasury);
-                            totalInterest = interestForThisYear.add(totalInterest);
-                        }
-                        //System.out.println(totalUserStash + " " + "$" + totalInterest.setScale(2,
-                        //      RoundingMode.CEILING) + " " + "$" + totalUserStash.add(totalInterest).setScale(2, RoundingMode.CEILING));
-
-                        System.out.println("Your Total Contribution: " + "$" + decimalFormat.format(totalUserStash));
-                        System.out.println("Total Interest Earned: " + "$" + decimalFormat.format(totalInterest));
-                        System.out.println("Contribution + Interest: " + "$" + decimalFormat.format(totalUserStash.add(totalInterest)));
-                        System.out.println("");
                         int selection = promptForInt(keyboardScanner,"Press (1) to learn more about 10 Year U.S. Treasuries:\n" +
                                 "Press (2) to return to the Main Menu: " );
                         System.out.println("");
@@ -203,24 +140,10 @@ public class Main {
 
                     if (investChoice == 6) {
 
-                         //computation.goldMath();
-                        BigDecimal totalUserStash = BigDecimal.ZERO;
-                        BigDecimal totalInterest = BigDecimal.ZERO;
-                        BigDecimal goldRateSinceNixon = new BigDecimal(".106");
+                        BigDecimal interest = new BigDecimal("0.106");
+                        String result = computation.calculateCompoundGrowth(investmentLength, userContribution, interest);
+                        System.out.print(result);
 
-                        for (int year = 1; year <= investmentLength; year++) {
-
-                            totalUserStash = userContribution.add(totalUserStash);
-                            BigDecimal interestForThisYear = totalInterest.add(totalUserStash).multiply(goldRateSinceNixon);
-                            totalInterest = interestForThisYear.add(totalInterest);
-                        }
-                        //System.out.println(totalUserStash + " " + "$" + totalInterest.setScale(2,
-                        //      RoundingMode.CEILING) + " " + "$" + totalUserStash.add(totalInterest).setScale(2, RoundingMode.CEILING));
-                        System.out.println("-------- new code new code new code ------");
-                        System.out.println("Your Total Contribution: " + "$" + decimalFormat.format(totalUserStash));
-                        System.out.println("Total Compound Growth: " + "$" + decimalFormat.format(totalInterest));
-                        System.out.println("Contribution + Compound Growth: " + "$" + decimalFormat.format(totalUserStash.add(totalInterest)));
-                        System.out.println("");
                         int selection = promptForInt(keyboardScanner,"Press (1) to learn more about Gold:\n" +
                                 "Press (2) to return to the Main Menu: " );
                         System.out.println("");
@@ -234,13 +157,11 @@ public class Main {
 
                     if (investChoice == 7) {
 
-                       // computation.bitcoinMath();
                         BigDecimal totalUserStash = BigDecimal.ZERO;
                         BigDecimal totalInterest = BigDecimal.ZERO;
                         BigDecimal bitcoinReturn = new BigDecimal("2.30");
-                        BigDecimal btcDivisor = new BigDecimal(".75");
+                        BigDecimal btcDivisor = new BigDecimal(".60");
                         BigDecimal btcDecrement = bitcoinReturn.multiply(btcDivisor);
-
 
                         for (int year = 1; year <= investmentLength; year++) {
 
@@ -409,5 +330,25 @@ public class Main {
 //                            System.out.println("");
 
 //__________________________________________________________________________________________________________________________________
+
+//                       // computation.highYieldSavingsMath();
+//                        BigDecimal totalUserStash = BigDecimal.ZERO;
+//                        BigDecimal totalInterest = BigDecimal.ZERO;
+//                        BigDecimal highYieldInterest = new BigDecimal(".01");
+//
+//                        for (int year = 1; year <= investmentLength; year++) {
+//
+//                            totalUserStash = userContribution.add(totalUserStash);
+//                            BigDecimal interestForThisYear = totalInterest.add(totalUserStash).multiply(highYieldInterest);
+//                            totalInterest = interestForThisYear.add(totalInterest);
+//                        }
+//                        System.out.println("Your total contribution: " + "$" + decimalFormat.format(totalUserStash));
+//                        System.out.println("Total interest earned: " + "$" + decimalFormat.format(totalInterest));
+//                        System.out.println("Contribution + Interest: " + "$" + decimalFormat.format(totalUserStash.add(totalInterest)));
+//                        System.out.println("");
+
+//__________________________________________________________________________________________________________________________________
+
+
 
 

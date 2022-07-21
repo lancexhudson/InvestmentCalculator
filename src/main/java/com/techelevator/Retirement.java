@@ -15,6 +15,8 @@ public class Retirement extends Main {
         decimalFormat.setGroupingUsed(true);
         decimalFormat.setGroupingSize(3);
 
+        Computation computation = new Computation();
+
             System.out.println("-----------------------------------------------");       /// Does this make sense being here
             System.out.println(" DISCLAIMER: This is NOT investment advice");
             System.out.println("  Past performance != Future Performance");
@@ -38,41 +40,22 @@ public class Retirement extends Main {
             System.out.println("(8) All of the Above");
             System.out.println("(9) Return to Main Menu");
             System.out.println("");
-            //System.out.print("What is your selection? ");
-           // int investChoice = Integer.parseInt(keyboardScanner.nextLine());
+
         int investChoice = promptForInt(keyboardScanner,"What is your selection? " );
         System.out.println("");
 
-        //System.out.print("What is your age? ");
-        //int userAge = Integer.parseInt(keyboardScanner.nextLine());
         int userAge = promptForInt(keyboardScanner,"What is your age? " );
         System.out.println("");
 
-        //System.out.print("How much do you plan on investing every year? ");
-        //BigDecimal userContribution = new BigDecimal(keyboardScanner.nextLine());
         BigDecimal userContribution = promptForBigDecimal(keyboardScanner,"How much do you plan on investing every year?  " );
         System.out.println("");
 
         if (investChoice == 1) {
-            int retirementAge = 65;
-            BigDecimal totalUserStash = BigDecimal.ZERO;
-            BigDecimal totalInterest = BigDecimal.ZERO;
+
             BigDecimal interest = new BigDecimal("0.0001");
-            int yearTilRetirement = (retirementAge - userAge);
+            String result = computation.calculateForRetirement(userContribution, interest, userAge);
+            System.out.print(result);
 
-            for (int year = 1; year <= yearTilRetirement; year++) {
-
-                totalUserStash = userContribution.add(totalUserStash);
-                BigDecimal interestForThisYear = totalInterest.add(totalUserStash).multiply(interest);
-                totalInterest = interestForThisYear.add(totalInterest);
-
-                // System.out.println(totalUserStash + " " + " " + totalInterest + " " + interestForThisYear);
-                //the line about shows amortization values because it is placed inside of the for loop
-            }
-            System.out.println("Your Total Contribution: " + "$" + decimalFormat.format(totalUserStash));
-            System.out.println("Total Interest Earned: " + "$" + decimalFormat.format(totalInterest));
-            System.out.println("Contribution + Interest: " + "$" + decimalFormat.format(totalUserStash.add(totalInterest)));
-            System.out.println("");
             int selection = promptForInt(keyboardScanner,"Press (1) to learn more about Savings Accounts:\n" +
                     "Press (2) to return to the Main Menu: " );
             System.out.println("");
@@ -84,25 +67,11 @@ public class Retirement extends Main {
             }
 
         } else if (investChoice == 2) {
-            int retirementAge = 65;
-            BigDecimal totalUserStash = BigDecimal.ZERO;
-            BigDecimal totalInterest = BigDecimal.ZERO;
-            BigDecimal highYieldInterest = new BigDecimal(".01");
-            int yearTilRetirement = (retirementAge - userAge);
 
-            for (int year = 1; year <= yearTilRetirement; year++) {
+            BigDecimal interest = new BigDecimal("0.01");
+            String result = computation.calculateForRetirement(userContribution, interest, userAge);
+            System.out.print(result);
 
-                totalUserStash = userContribution.add(totalUserStash);
-                BigDecimal interestForThisYear = totalInterest.add(totalUserStash).multiply(highYieldInterest);
-                totalInterest = interestForThisYear.add(totalInterest);
-
-               // System.out.println(totalUserStash + " " + "$" + totalInterest.setScale(2,
-                 //       RoundingMode.CEILING) + " " + "$" + totalUserStash.add(totalInterest).setScale(2, RoundingMode.CEILING));
-            }
-            System.out.println("Your Total Contribution: " + "$" + decimalFormat.format(totalUserStash));
-            System.out.println("Total Interest Earned: " + "$" + decimalFormat.format(totalInterest));
-            System.out.println("Contribution + Interest: " + "$" + decimalFormat.format(totalUserStash.add(totalInterest)));
-            System.out.println("");
             int selection = promptForInt(keyboardScanner,"Press (1) to learn more about High-Yield Savings Accounts:\n" +
                     "Press (2) to return to the Main Menu: " );
             System.out.println("");
@@ -114,25 +83,11 @@ public class Retirement extends Main {
             }
 
         } if (investChoice == 3) {
-            int retirementAge = 65;
-            BigDecimal totalUserStash = BigDecimal.ZERO;
-            BigDecimal totalInterest = BigDecimal.ZERO;
-            BigDecimal fourZeroOneKWithMatch = new BigDecimal(".11");
-            int yearTilRetirement = (retirementAge - userAge);
 
-            for (int year = 1; year <= yearTilRetirement; year++) {
+            BigDecimal interest = new BigDecimal("0.11");
+            String result = computation.calculateForRetirement(userContribution, interest, userAge);
+            System.out.print(result);
 
-                totalUserStash = userContribution.add(totalUserStash);
-                BigDecimal interestForThisYear = totalInterest.add(totalUserStash).multiply(fourZeroOneKWithMatch);
-                totalInterest = interestForThisYear.add(totalInterest);
-
-               // System.out.println(totalUserStash + " " + "$" + totalInterest.setScale(2,
-                 //       RoundingMode.CEILING) + " " + "$" + totalUserStash.add(totalInterest).setScale(2, RoundingMode.CEILING));
-            }
-            System.out.println("Your Total Contribution: " + "$" + decimalFormat.format(totalUserStash));
-            System.out.println("Total Compound Growth: " + "$" + decimalFormat.format(totalInterest));
-            System.out.println("Contribution + Compound Growth: " + "$" + decimalFormat.format(totalUserStash.add(totalInterest)));
-            System.out.println("");
             int selection = promptForInt(keyboardScanner,"Press (1) to learn more about 401Ks:\n" +
                     "Press (2) to return to the Main Menu: " );
             System.out.println("");
@@ -142,28 +97,14 @@ public class Retirement extends Main {
             } else if (selection == 2) {
                 TopMenu.introduction();
             }
-
         }
+
         if (investChoice == 4) {
-            int retirementAge = 65;
-            BigDecimal totalUserStash = BigDecimal.ZERO;
-            BigDecimal totalInterest = BigDecimal.ZERO;
-            BigDecimal standardAndPoors500 = new BigDecimal(".105");
-            int yearTilRetirement = (retirementAge - userAge);
 
-            for (int year = 1; year <= yearTilRetirement; year++) {
+            BigDecimal interest = new BigDecimal("0.105");
+            String result = computation.calculateForRetirement(userContribution, interest, userAge);
+            System.out.print(result);
 
-                totalUserStash = userContribution.add(totalUserStash);
-                BigDecimal interestForThisYear = totalInterest.add(totalUserStash).multiply(standardAndPoors500);
-                totalInterest = interestForThisYear.add(totalInterest);
-
-             //   System.out.println(totalUserStash + " " + "$" + totalInterest.setScale(2,
-               //         RoundingMode.CEILING) + " " + "$" + totalUserStash.add(totalInterest).setScale(2, RoundingMode.CEILING));
-            }
-            System.out.println("Your Total Contribution: " + "$" + decimalFormat.format(totalUserStash));
-            System.out.println("Total Compound Growth: " + "$" + decimalFormat.format(totalInterest));
-            System.out.println("Contribution + Compound Growth: " + "$" + decimalFormat.format(totalUserStash.add(totalInterest)));
-            System.out.println("");
             int selection = promptForInt(keyboardScanner,"Press (1) to learn more about S&P 500 Index Funds:\n" +
                     "Press (2) to return to the Main Menu: " );
             System.out.println("");
@@ -177,26 +118,10 @@ public class Retirement extends Main {
 
         if (investChoice == 5) {
 
-            int retirementAge = 65;
-            BigDecimal totalUserStash = BigDecimal.ZERO;
-            BigDecimal totalInterest = BigDecimal.ZERO;
-            BigDecimal tenYearUsTreasury = new BigDecimal(".0313");
-            int yearTilRetirement = (retirementAge - userAge);
+            BigDecimal interest = new BigDecimal("0.0313");
+            String result = computation.calculateForRetirement(userContribution, interest, userAge);
+            System.out.print(result);
 
-            for (int year = 1; year <= yearTilRetirement; year++) {
-
-                totalUserStash = userContribution.add(totalUserStash);
-                BigDecimal interestForThisYear = totalInterest.add(totalUserStash).multiply(tenYearUsTreasury);
-                totalInterest = interestForThisYear.add(totalInterest);
-
-                //   System.out.println(totalUserStash + " " + "$" + totalInterest.setScale(2,
-                //         RoundingMode.CEILING) + " " + "$" + totalUserStash.add(totalInterest).setScale(2, RoundingMode.CEILING));
-
-            }
-            System.out.println("Your Total Contribution: " + "$" + decimalFormat.format(totalUserStash));
-            System.out.println("Total Interest Earned: " + "$" + decimalFormat.format(totalInterest));
-            System.out.println("Contribution + Interest: " + "$" + decimalFormat.format(totalUserStash.add(totalInterest)));
-            System.out.println("");
             int selection = promptForInt(keyboardScanner,"Press (1) to learn more about 10 Year U.S. Treasuries:\n" +
                     "Press (2) to return to the Main Menu: " );
             System.out.println("");
@@ -209,25 +134,11 @@ public class Retirement extends Main {
         }
 
         if (investChoice == 6) {
-            int retirementAge = 65;
-            BigDecimal totalUserStash = BigDecimal.ZERO;
-            BigDecimal totalInterest = BigDecimal.ZERO;
-            BigDecimal goldRateSinceNixon = new BigDecimal(".106");
-            int yearTilRetirement = (retirementAge - userAge);
 
-            for (int year = 1; year <= yearTilRetirement; year++) {
+            BigDecimal interest = new BigDecimal("0.106");
+            String result = computation.calculateForRetirement(userContribution, interest, userAge);
+            System.out.print(result);
 
-                totalUserStash = userContribution.add(totalUserStash);
-                BigDecimal interestForThisYear = totalInterest.add(totalUserStash).multiply(goldRateSinceNixon);
-                totalInterest = interestForThisYear.add(totalInterest);
-
-                //System.out.println(totalUserStash + " " + "$" + totalInterest.setScale(2,
-                  //      RoundingMode.CEILING) + " " + "$" + totalUserStash.add(totalInterest).setScale(2, RoundingMode.CEILING));
-            }
-            System.out.println("Your Total Contribution: " + "$" + decimalFormat.format(totalUserStash));
-            System.out.println("Total Compound Growth: " + "$" + decimalFormat.format(totalInterest));
-            System.out.println("Contribution + Compound Growth: " + "$" + decimalFormat.format(totalUserStash.add(totalInterest)));
-            System.out.println("");
             int selection = promptForInt(keyboardScanner,"Press (1) to learn more about Gold:\n" +
                     "Press (2) to return to the Main Menu: " );
             System.out.println("");
@@ -245,7 +156,7 @@ public class Retirement extends Main {
             BigDecimal totalInterest = BigDecimal.ZERO;
             BigDecimal bitcoinReturn = new BigDecimal("2.30");
             int yearTilRetirement = (retirementAge - userAge);
-            BigDecimal btcDivisor = new BigDecimal(".75");
+            BigDecimal btcDivisor = new BigDecimal(".60");
             BigDecimal btcDecrement = bitcoinReturn.multiply(btcDivisor);
 
             for (int year = 1; year <= yearTilRetirement; year++) {

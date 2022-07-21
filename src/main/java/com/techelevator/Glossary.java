@@ -30,7 +30,7 @@ public class Glossary extends Main {
     public static void fourZeroOneKGlossary() {
         System.out.println("--------------------------------------------------------------------------");
         System.out.println("????????????????????  update this update this ??????????????????????????????????");
-        System.out.println("***** An interest rate of 1.00% was used for this calculation ******");
+        System.out.println("** An annual compound growth rate of 11% was used for this calculation **");
         System.out.println("** This is common rate offered by both Capital One and Ally Bank **");
         System.out.println("---------------------------------------------------------------------------");
         System.out.println("A 401(k) plan is a retirement savings plan offered by many American employers that has tax");
@@ -41,7 +41,7 @@ public class Glossary extends Main {
     public static void standardAndPoorsGlossary() {
         System.out.println("--------------------------------------------------------------------------");
         System.out.println("????????????????????  update this update this ??????????????????????????????????");
-        System.out.println("***** An interest rate of 1.00% was used for this calculation ******");
+        System.out.println("***** An annual compound growth rate of 10.5% was used for this calculation ******");
         System.out.println("** This is common rate offered by both Capital One and Ally Bank **");
         System.out.println("---------------------------------------------------------------------------");
         System.out.println("The Standard and Poor's 500, or simply the S&P 500, is a stock market index");
@@ -54,7 +54,7 @@ public class Glossary extends Main {
     public static void usTreasuryGlossary() {
         System.out.println("--------------------------------------------------------------------------");
         System.out.println("????????????????????  update this update this ??????????????????????????????????");
-        System.out.println("***** An interest rate of 1.00% was used for this calculation ******");
+        System.out.println("***** An interest rate of 3% was used for this calculation ******");
         System.out.println("** This is common rate offered by both Capital One and Ally Bank **");
         System.out.println("---------------------------------------------------------------------------");
         System.out.println(" United States Treasury securities, also called Treasuries or Treasurys, are government");
@@ -64,7 +64,7 @@ public class Glossary extends Main {
     public static void goldGlossary() {
         System.out.println("--------------------------------------------------------------------------");
         System.out.println("????????????????????  update this update this ??????????????????????????????????");
-        System.out.println("***** An interest rate of 1.00% was used for this calculation ******");
+        System.out.println("***** An annual compound growth rate of 10.6% was used for this calculation ******");
         System.out.println("** This is common rate offered by both Capital One and Ally Bank **");
         System.out.println("---------------------------------------------------------------------------");
         System.out.println("Investors can invest in gold through exchange-traded funds (ETFs), buying stock in gold miners");
@@ -74,7 +74,7 @@ public class Glossary extends Main {
     public static void btcGlossary() {
         System.out.println("--------------------------------------------------------------------------");
         System.out.println("????????????????????  update this update this ??????????????????????????????????");
-        System.out.println("***** An interest rate of 1.00% was used for this calculation ******");
+        System.out.println("***** An annual compound growth rate of 230% was used for this calculation ******");
         System.out.println("** This is common rate offered by both Capital One and Ally Bank **");
         System.out.println("---------------------------------------------------------------------------");
         System.out.println("Bitcoin is a decentralized digital currency that can be transferred on the peer-to-peer bitcoin network.");
