@@ -51,7 +51,6 @@ public class SavingsRate {
         System.out.print("Would you like your savings rate displayed? ");
 
         int paydayContribution = Integer.parseInt(keyboardScanner.nextLine());
-        BigDecimal paydayContBD = BigDecimal.valueOf(paydayContribution);
         System.out.println("");
 
 

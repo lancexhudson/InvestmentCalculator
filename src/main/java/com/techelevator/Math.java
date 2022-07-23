@@ -52,50 +52,7 @@ public class Math {
             return userChoice;
         }
 
-    public static void preTaxSavingsCalc () {
-        BigDecimal investedTaxableIncome = BigDecimal.ZERO;
 
-//        Scanner scanner = new Scanner (System.in);
-//        Scanner input = scanner;
-//
-//        double baseIncome = 0;
-//        double taxTier = .10;
-//        double incomeTier = input.nextDouble();
-//        double taxTier2Test = .12;
-//        double incomeTier2Test = 10276.00;
-//
-//        if (incomeTier > baseIncome) {
-//            (incomeTier * taxTier)
-//        } else
-//                double n1, n2, n3;
-//                n1 = readme.nextDouble();
-//                n2 = readme.nextDouble();
-//                n3 = n1 + n2;
-//                System.out.println("Total = " + n3);
-//            }
-//        }
-
-
-        BigDecimal taxTier1 = new BigDecimal(".10");
-        BigDecimal taxTier2 = new BigDecimal(".12");
-        BigDecimal taxTier3 = new BigDecimal(".22");
-        BigDecimal taxTier4 = new BigDecimal(".24");
-        BigDecimal taxTier5 = new BigDecimal(".32");
-        BigDecimal taxTier6 = new BigDecimal(".35");
-        BigDecimal taxTier7 = new BigDecimal(".37");
-
-        BigDecimal incomeTier1 = new BigDecimal("0.00");
-        BigDecimal incomeTier2 = new BigDecimal("10276.00");
-        BigDecimal incomeTier3 = new BigDecimal("41776.00");
-        BigDecimal incomeTier4 = new BigDecimal("89076.00");
-        BigDecimal incomeTier5 = new BigDecimal("170051.00");
-        BigDecimal incomeTier6 = new BigDecimal("215591.00");
-        BigDecimal incomeTier7 = new BigDecimal("539901.00");
-
-//        if (annualIncome.compareTo(incomeTier1) > 0) {
-//            System.out.println(annualIncome.multiply(taxTier1));
-//        }
-    }
 
         public static void computationRates () {
 
