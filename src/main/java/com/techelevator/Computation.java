@@ -108,6 +108,7 @@ public class Computation {
 
     public static void preTaxSavingsCalc () {
         BigDecimal taxableIncome = BigDecimal.ZERO;
+        BigDecimal incomeRemainder = BigDecimal.ZERO;
 
         BigDecimal taxTier1 = new BigDecimal(".10");
         BigDecimal taxTier2 = new BigDecimal(".12");
@@ -128,10 +129,12 @@ public class Computation {
         final BigDecimal tier1cost = (incomeTier2.subtract(incomeTier1));
         final BigDecimal tier2cost = (incomeTier3.subtract(incomeTier2));
         final BigDecimal tier3cost = (incomeTier4.subtract(incomeTier3));
+        final BigDecimal tier4cost = (incomeTier5.subtract(incomeTier4));
+        final BigDecimal tier5cost = (incomeTier6.subtract(incomeTier5));
+        final BigDecimal tier6cost = (incomeTier7.subtract(incomeTier6));
 
-        if (taxableIncome.compareTo(incomeTier1) == 0) {
-            BigDecimal tier1tax = 
-        }
+        BigDecimal tier1tax = new BigDecimal(taxableIncome.compareTo(incomeTier1));
+        BigDecimal tier2tax = new BigDecimal(taxableIncome.compareTo(incomeTier3.subtract(incomeTier2)));
 
 
 
