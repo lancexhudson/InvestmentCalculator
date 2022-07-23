@@ -9,6 +9,33 @@ public class TopMenu extends Computation {
 
     static Scanner keyboardScanner = new Scanner(System.in);
 
+    public static int investmentLength;
+    public static BigDecimal userContribution;
+
+
+
+public static void investmentPrompts() {
+
+    int investmentLength = promptForInt(keyboardScanner, "How many years do you plan on investing? ");
+    System.out.println("");
+    BigDecimal userContribution = promptForBigDecimal(keyboardScanner, "How much do you plan on investing every year? ");
+    System.out.println("");
+}
+
+public static void cashPrompt() {
+
+    BigDecimal userContribution = promptForBigDecimal(keyboardScanner, "How much cash are you setting aside every year? ");
+    System.out.println("");
+    int investmentLength = promptForInt(keyboardScanner, "How long do you think ? ");
+    System.out.println("");
+
+
+}
+
+
+
+
+
 
     public static void introduction() {
         System.out.println("--------------------------------------------------");
@@ -43,7 +70,7 @@ public class TopMenu extends Computation {
         System.out.println("(5) 10-Year U.S. Treasury");
         System.out.println("(6) Gold");
         System.out.println("(7) Bitcoin");
-        System.out.println("(8) All of the Above");
+        System.out.println("(8) Cash");
         System.out.println("(9) Return to Main Menu");
 
         System.out.println("");
@@ -169,5 +196,43 @@ public class TopMenu extends Computation {
         }
 
 
+
+
+
+
+
+
+    private static int promptForInt(Scanner keyboardScanner, String prompt) {
+        boolean goodInput = false;
+        int userChoice = 1;
+        do {
+            try {
+                System.out.print(prompt);
+                userChoice = Integer.parseInt(keyboardScanner.nextLine());
+                goodInput = true;
+            } catch (NumberFormatException e) {}  //need the empty block after catch
+        } while (!goodInput) ;
+
+        return userChoice;
+    }
+
+    private static BigDecimal promptForBigDecimal (Scanner keyboardScanner, String prompt) {
+        boolean goodInput = false;
+        BigDecimal userChoice = new BigDecimal(1);
+        do {
+            try {
+                System.out.print(prompt);
+                userChoice = new BigDecimal(keyboardScanner.nextLine());
+                goodInput = true;
+            } catch (NumberFormatException e) {}
+        } while (!goodInput);
+
+        return  userChoice;
+    }
+
 }
+
+
+
+
 

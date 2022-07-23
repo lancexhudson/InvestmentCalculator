@@ -1,12 +1,10 @@
 package com.techelevator;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.text.DecimalFormat;
-import java.util.Objects;
 import java.util.Scanner;
 
-public class Main {
+public class Main extends TopMenu {
 
 
 
@@ -18,6 +16,8 @@ public class Main {
             decimalFormat.setGroupingSize(3);
 
         Computation computation = new Computation();
+        TopMenu topMenu = new TopMenu();
+
 
         TopMenu.introduction();
 
@@ -25,7 +25,6 @@ public class Main {
         System.out.println("");
 
         if (input == 1) {
-
             SavingsRate.prompt();
 
         } if (input == 3) {
@@ -41,12 +40,15 @@ public class Main {
                 if (subinput == 1) {
                    TopMenu.savingsAndInvestments();
 
+
                     int investChoice = promptForInt(keyboardScanner, "What is your selection? ");
                     System.out.println("");
+                    // TopMenu.investmentPrompts();
                     int investmentLength = promptForInt(keyboardScanner,"How many years do you plan on investing? " );
                     System.out.println("");
                     BigDecimal userContribution = promptForBigDecimal(keyboardScanner,"How much do you plan on investing every year? " );
                     System.out.println("");
+
 
                     if (investChoice == 1) {
 
@@ -202,6 +204,18 @@ public class Main {
                     if (investChoice == 8) {
 
 
+                        String result = computation.calculateInflationHalving(userContribution);
+                        System.out.print(result);
+
+                        int selection = promptForInt(keyboardScanner,"Press (1) to *************************************:\n" +
+                                "Press (2) to return to the Main Menu: " );
+                        System.out.println("");
+
+                        if (selection == 1) {
+                            Glossary.goldGlossary();
+                        } else if (selection == 2) {
+                            TopMenu.introduction();
+                        }
                     }
                 }
             }

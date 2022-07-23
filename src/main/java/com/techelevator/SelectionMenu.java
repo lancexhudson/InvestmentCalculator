@@ -47,7 +47,7 @@ public class SelectionMenu extends Retirement {
             System.out.println("(6) U.S. Treasuries");
             System.out.println("(7) Gold");
             System.out.println("(8) Bitcoin");
-            System.out.println("(9) All of the Above");
+            System.out.println("(9) Cash");
             System.out.println("(0) Return to Main Menu");
             System.out.println("");
             System.out.print("What is your selection? ");

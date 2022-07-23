@@ -1,6 +1,6 @@
 package com.techelevator;
 
-public class Glossary extends Main {
+public class Glossary extends Computation {
 
     public static void glossaryTerms() {
         System.out.println("A savings account is not enough");
