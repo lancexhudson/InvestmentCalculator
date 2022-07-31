@@ -28,8 +28,6 @@ public static void cashPrompt() {
     System.out.println("");
     int investmentLength = promptForInt(keyboardScanner, "How long do you think ? ");
     System.out.println("");
-
-
 }
 
 
@@ -46,7 +44,6 @@ public static void cashPrompt() {
         System.out.println("(3) Plan for your Retirement");
         System.out.println("");
        // System.out.print("Please choose an option: ");
-
     }
 
     public static void disclaimer() {
@@ -229,6 +226,14 @@ public static void cashPrompt() {
 
         return  userChoice;
     }
+
+
+
+    // THIS BLOCK IS USED FOR REFERENCE IN COMPUTATION CLASS >> PreTax Savings >> Taxable Income
+    public static void userContribution(BigDecimal taxableIncome) {
+    }
+
+
 
 }
 

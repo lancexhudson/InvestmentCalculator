@@ -12,7 +12,7 @@ public class Computation {
 
 
     private int investmentLength;
-    private BigDecimal userContribution;
+    private static BigDecimal userContribution;
     public int yearsOfSaving;
     public int yearsUntilRetirement;
     private BigDecimal annualSalary;
@@ -107,8 +107,11 @@ public class Computation {
 
 
     public static void preTaxSavingsCalc () {
+
         BigDecimal taxableIncome = BigDecimal.ZERO;
+        TopMenu.userContribution(taxableIncome);
         BigDecimal incomeRemainder = BigDecimal.ZERO;
+        BigDecimal remainder = new BigDecimal(0);
 
         BigDecimal taxTier1 = new BigDecimal(".10");
         BigDecimal taxTier2 = new BigDecimal(".12");
@@ -133,10 +136,14 @@ public class Computation {
         final BigDecimal tier5cost = (incomeTier6.subtract(incomeTier5));
         final BigDecimal tier6cost = (incomeTier7.subtract(incomeTier6));
 
-        BigDecimal tier1tax = new BigDecimal(taxableIncome.compareTo(incomeTier1));
+        BigDecimal tier1tax = new BigDecimal(taxableIncome.compareTo(incomeTier1)); // input vs
         BigDecimal tier2tax = new BigDecimal(taxableIncome.compareTo(incomeTier3.subtract(incomeTier2)));
 
+        if (userContribution.compareTo(taxTier4) == -1) {
+            remainder.compareTo(userContribution.subtract(taxTier3));
+        } if (userContribution.compareTo(taxTier3) == -1) {
 
+        }
 
 
 //        Scanner input = scanner;
@@ -162,9 +169,5 @@ public class Computation {
 //            System.out.println(annualIncome.multiply(taxTier1));
 //        }
     }
-
-
-
-
-
+    
 }

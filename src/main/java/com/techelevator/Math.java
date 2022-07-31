@@ -10,9 +10,14 @@ import java.util.Scanner;
 public class Math {
 
 
+
+    // not currently in use as of 7/31/22
+
+
+
+
         Scanner keyboardScanner = new Scanner(System.in);
         DecimalFormat decimalFormat = new DecimalFormat("#.##");
-
 
 
         // How do I make this work here, and not in the main?!?!!
@@ -67,34 +72,34 @@ public class Math {
         }
 
 
-        public void savingsRateMath () {
-            // below is the code to calculate savings rate. Try to use this method in main.
-            BigDecimal totalUserStash = BigDecimal.ZERO;
-            BigDecimal totalInterest = BigDecimal.ZERO;
-            BigDecimal interest = new BigDecimal("0.0001");
-
-            for (int year = 1; year <= investmentLength; year++) {
-
-                totalUserStash = userContribution.add(totalUserStash);
-                BigDecimal interestForThisYear = totalInterest.add(totalUserStash).multiply(interest);
-                totalInterest = interestForThisYear.add(totalInterest);
-            }
-            System.out.println("Your total contribution: " + "$" + decimalFormat.format(totalUserStash));
-            System.out.println("Total interest earned: " + "$" + decimalFormat.format(totalInterest));
-            System.out.println("Contribution + Interest: " + "$" + decimalFormat.format(totalUserStash.add(totalInterest)));
-            System.out.println("");
-            int selection = promptForInt(keyboardScanner, "Press (1) to learn more about Savings Accounts:\n" +
-                    "Press (2) to return to the Main Menu: ");
-            // int selection = promptForInt(keyboardScanner, "Press (2) to return to the Main Menu: ");
-            System.out.println("");
-
-            if (selection == 1) {
-                Glossary.savingsGlossary();
-            } else if (selection == 2) {
-                TopMenu.introduction();
-            }
-
-        }
+//        public void savingsRateMath () {
+//            // below is the code to calculate savings rate. Try to use this method in main.
+//            BigDecimal totalUserStash = BigDecimal.ZERO;
+//            BigDecimal totalInterest = BigDecimal.ZERO;
+//            BigDecimal interest = new BigDecimal("0.0001");
+//
+//            for (int year = 1; year <= investmentLength; year++) {
+//
+//                totalUserStash = userContribution.add(totalUserStash);
+//                BigDecimal interestForThisYear = totalInterest.add(totalUserStash).multiply(interest);
+//                totalInterest = interestForThisYear.add(totalInterest);
+//            }
+//            System.out.println("Your total contribution: " + "$" + decimalFormat.format(totalUserStash));
+//            System.out.println("Total interest earned: " + "$" + decimalFormat.format(totalInterest));
+//            System.out.println("Contribution + Interest: " + "$" + decimalFormat.format(totalUserStash.add(totalInterest)));
+//            System.out.println("");
+//            int selection = promptForInt(keyboardScanner, "Press (1) to learn more about Savings Accounts:\n" +
+//                    "Press (2) to return to the Main Menu: ");
+//            // int selection = promptForInt(keyboardScanner, "Press (2) to return to the Main Menu: ");
+//            System.out.println("");
+//
+//            if (selection == 1) {
+//                Glossary.savingsGlossary();
+//            } else if (selection == 2) {
+//                TopMenu.introduction();
+//            }
+//
+//        }
 
         public void highYieldSavingsMath () {
             BigDecimal totalUserStash = BigDecimal.ZERO;

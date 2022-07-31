@@ -7,7 +7,6 @@ import java.util.Scanner;
 public class Main extends TopMenu {
 
 
-
     public static void main(String[] args) {
 
             Scanner keyboardScanner = new Scanner(System.in);
