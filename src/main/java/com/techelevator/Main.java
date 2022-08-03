@@ -42,7 +42,6 @@ public class Main extends TopMenu {
 
                     int investChoice = promptForInt(keyboardScanner, "What is your selection? ");
                     System.out.println("");
-                    // TopMenu.investmentPrompts();
                     int investmentLength = promptForInt(keyboardScanner,"How many years do you plan on investing? " );
                     System.out.println("");
                     BigDecimal userContribution = promptForBigDecimal(keyboardScanner,"How much do you plan on investing every year? " );
@@ -102,7 +101,7 @@ public class Main extends TopMenu {
 
                     if (investChoice == 4) {
 
-                        ///////////////////////////////// AMATORIZATION BLOCK AMATORIZATION ??????????????????????????????????????????
+                        ///////////////////////////////// AMORTIZATION BLOCK AMORTIZATION ??????????????????????????????????????????
                         //*********** the below code is good for showing year over year growth from investment *******************///////////
                         /////////  System.out.println(totalUserStash + " " + "$" + totalInterest.setScale(2,
                         ///////// // RoundingMode.CEILING) + " " + "$" + totalUserStash.add(totalInterest).setScale(2, RoundingMode.CEILING));
@@ -169,7 +168,7 @@ public class Main extends TopMenu {
                             totalUserStash = userContribution.add(totalUserStash);
                             BigDecimal interestForThisYear = totalInterest.add(totalUserStash).multiply(bitcoinReturn);
                             totalInterest = interestForThisYear.add(totalInterest);
-                            ///// curly brace moved from here
+
                         }
                         System.out.println("-------- new code new code new code ------");
                         System.out.println("Your Total Contribution: " + "$" + decimalFormat.format(totalUserStash));
@@ -201,8 +200,6 @@ public class Main extends TopMenu {
                     }
 
                     if (investChoice == 8) {
-
-
                         String result = computation.calculateInflationHalving(userContribution);
                         System.out.print(result);
 

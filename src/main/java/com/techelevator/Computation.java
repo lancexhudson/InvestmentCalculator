@@ -129,6 +129,11 @@ public class Computation {
         BigDecimal incomeTier6 = new BigDecimal("215591.00");
         BigDecimal incomeTier7 = new BigDecimal("539901.00");
 
+        // Calculation being performed: apply appropriate taxTier to incomeTier and carry that total tax balance forward.
+        // i.e. Someone making $50,000/year would pay 10% tax for incomeTier1, 12% tax for incomeTier2, and 22% tax on the
+        // remaining $8224.
+
+
         final BigDecimal tier1cost = (incomeTier2.subtract(incomeTier1));
         final BigDecimal tier2cost = (incomeTier3.subtract(incomeTier2));
         final BigDecimal tier3cost = (incomeTier4.subtract(incomeTier3));

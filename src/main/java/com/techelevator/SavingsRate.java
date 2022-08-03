@@ -26,7 +26,6 @@ public class SavingsRate {
         String subInput = keyboardScanner.nextLine();
         System.out.println("");
 
-
         System.out.println("---------------------------------------------");
         System.out.println("  Calculate your Savings Rate: ");
         System.out.println("---------------------------------------------");
@@ -37,7 +36,6 @@ public class SavingsRate {
         System.out.print("What percentage of your income would you like to save? ");
         BigDecimal percentBeingSaved = new BigDecimal(keyboardScanner.nextLine());
         System.out.println("");
-
 
         System.out.println("---------------------------------------------");
         System.out.println("  Determine the frequency of savings contribution ");
@@ -53,7 +51,6 @@ public class SavingsRate {
         int paydayContribution = Integer.parseInt(keyboardScanner.nextLine());
         System.out.println("");
 
-
         if (paydayContribution == 1) {
 
             BigDecimal weeklySavings = new BigDecimal(".00192307692");
@@ -66,7 +63,6 @@ public class SavingsRate {
             System.out.println("With an income of " + "$" + decimalFormat.format(annualSalary) + " per year, ");
             System.out.println("Your weekly savings rate of " + percentBeingSaved + "%" + " " + "is equal to " + "$" + weeklyRateAmount);
 
-
         } else if (paydayContribution == 2) {
             BigDecimal weeklySavings = new BigDecimal(".00192307692");
             BigDecimal biWeeklySavings = new BigDecimal(".003846154");
@@ -77,7 +73,6 @@ public class SavingsRate {
 
             System.out.println("With an income of " + "$" + decimalFormat.format(annualSalary) + " per year, ");
             System.out.println("Your bi-weekly savings rate of " + percentBeingSaved + "%" + " " + "is equal to " + "$" + biWeeklyRateAmount);
-
 
         } else if (paydayContribution == 3) {
             BigDecimal weeklySavings = new BigDecimal(".00192307692");
