@@ -1,10 +1,7 @@
 package com.techelevator;
 
-import org.w3c.dom.ls.LSOutput;
-
 import java.math.BigDecimal;
 import java.math.MathContext;
-import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
